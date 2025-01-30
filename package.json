@@ -1,0 +1,27 @@
+{
+  "name": "astro-tauri",
+  "type": "module",
+  "version": "0.0.1",
+  "scripts": {
+    "dev": "astro dev",
+    "dev:native": "tauri dev",
+    "build": "astro build",
+    "build:native": "tauri build",
+    "preview": "astro preview",
+    "astro": "astro"
+  },
+  "dependencies": {
+    "astro": "^5.2.1"
+  },
+  "devDependencies": {
+    "@tailwindcss/vite": "^4.0.1",
+    "@tauri-apps/cli": "^2.2.7",
+    "@trivago/prettier-plugin-sort-imports": "^5.2.2",
+    "@types/node": "^22.12.0",
+    "prettier": "^3.4.2",
+    "prettier-plugin-tailwindcss": "^0.6.11",
+    "tailwindcss": "^4.0.1",
+    "typescript": "^5.7.3"
+  },
+  "packageManager": "pnpm@9.15.4+sha512.b2dc20e2fc72b3e18848459b37359a32064663e5627a51e4c74b2c29dd8e8e0491483c3abb40789cfd578bf362fb6ba8261b05f0387d76792ed6e23ea3b1b6a0"
+}

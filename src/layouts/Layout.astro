@@ -1,0 +1,35 @@
+---
+import { APP_CONFIG } from "~/config/app";
+import "~/styles/tailwind.css";
+
+interface Props {
+	title?: string;
+	desc?: string;
+}
+
+const { title: astroTitle, desc: astroDesc } = Astro.props;
+
+const title = astroTitle
+	? APP_CONFIG.branding.title.relative.replace("%s", astroTitle)
+	: APP_CONFIG.branding.title.absolute;
+const desc = astroDesc
+	? APP_CONFIG.branding.desc.relative.replace("%s", astroDesc)
+	: APP_CONFIG.branding.desc.absolute;
+---
+
+<!doctype html>
+<html lang="en">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width" />
+		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+		<meta name="generator" content={Astro.generator} />
+		<title>{title}</title>
+		<meta name="description" content={desc} />
+	</head>
+	<body
+		class="animated-background-horizontal bg-gradient-to-r from-orange-500 via-orange-700 to-orange-800"
+	>
+		<slot />
+	</body>
+</html>
