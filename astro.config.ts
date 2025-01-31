@@ -1,6 +1,8 @@
 import tailwindcss from "@tailwindcss/vite";
 import { defineConfig } from "astro/config";
 
+import vue from "@astrojs/vue";
+
 const host = process.env.TAURI_DEV_HOST;
 
 // https://astro.build/config
@@ -28,4 +30,6 @@ export default defineConfig({
       sourcemap: !!process.env.TAURI_ENV_DEBUG,
     },
   },
+
+  integrations: [vue()],
 });

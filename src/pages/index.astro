@@ -1,7 +1,25 @@
 ---
-import Layout from "../layouts/Layout.astro";
+import Button from "~/components/vue/Button.vue";
+import Layout from "~/layouts/Layout.astro";
+
+const emptyArray = Array(6).fill(0);
+
+const isEven = (x: number) => x % 2 == 0;
 ---
 
 <Layout>
-	<h1>Hello!</h1>
+	<div class="flex flex-col gap-10 py-10">
+		<h1 class="text-center font-semibold text-2xl">Hello!</h1>
+		<div
+			class="flex grow flex-wrap items-center justify-center gap-2 max-w-sm w-full mx-auto"
+		>
+			{
+				emptyArray.map((_, idx) => {
+					const idxIsEven = isEven(idx);
+					if (idxIsEven) return <Button {idx} client:idle />;
+					return <Button {idx} />;
+				})
+			}
+		</div>
+	</div>
 </Layout>
